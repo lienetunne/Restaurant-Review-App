@@ -149,6 +149,9 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt', restaurant.name);
+  image.setAttribute('alt', `Image of ${restaurant.name} restaurant`);
+  image.setAttribute('tabindex', 0);
   li.append(image);
 
   const name = document.createElement('h1');
@@ -190,7 +193,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 /*======== Service worker ===========*/
 // if browser supports sevice worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(registration => {
+  navigator.serviceWorker.register('./sw.js').then(registration => {
     // registration succeed
         if (registration.installing) {
             console.log('registration installing');

@@ -88,7 +88,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-
 /**
  * Update page and map for current restaurants.
  */
@@ -157,6 +156,7 @@ createRestaurantHTML = (restaurant) => {
   const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
+  name.setAttribute('tabindex', 0);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;

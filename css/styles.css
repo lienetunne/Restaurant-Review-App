@@ -499,3 +499,18 @@ nav h1 a {
 		margin: 10px;
 	}
 }
+a.skip {
+	color: #fff;
+	background-color: #444;
+	position: absolute;
+	left: -1000em;
+	width: 20em;
+}
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+  left: 0;
+  top: 30px;
+  width: auto;
+  height: auto;
+}

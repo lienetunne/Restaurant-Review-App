@@ -1,5 +1,5 @@
 # Restaurant Review App
----
+
 This app was created by Liene Tunne  as part of Udacity Nanodegree "FEND".
 
 ### Focusing on:

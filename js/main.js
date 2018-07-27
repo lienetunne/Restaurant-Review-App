@@ -88,7 +88,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-
 /**
  * Update page and map for current restaurants.
  */
@@ -154,9 +153,10 @@ createRestaurantHTML = (restaurant) => {
   image.setAttribute('tabindex', 0);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
+  name.setAttribute('tabindex', 0);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
@@ -188,23 +188,4 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-}
-
-/*======== Service worker ===========*/
-// if browser supports sevice worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').then(registration => {
-    // registration succeed
-        if (registration.installing) {
-            console.log('registration installing');
-        } if (registration.waiting) {
-            console.log('waiting');
-        } if (registration.active) {
-            console.log('active');
-        }
-        console.log('Registration succeed!')
-  // if not.... or something went wrong
-}).catch (error => {
-        console.log('Something went wrong during registration!');
-      });
 }
